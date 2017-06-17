@@ -1,0 +1,234 @@
+@import "reset"
+@import "variables"
+
+html
+    font-size 16px
+    
+    +tablet()
+        font-size 15px
+        
+    +mobile()
+        font-size 14px
+body
+    background $backgroundColor
+    color $fontColor
+    line-height 1.6
+    font-size 1rem
+    font-family 'Roboto', sans-serif
+
+p
+    margin 12px 0
+    
+strong
+    font-weight 700
+
+header 
+    width 100%
+    box-sizing border-box
+    z-index 10
+    background-color $primaryColor
+    text-align left
+    position fixed
+    top 0
+    left 0
+    right 0
+    height 64px
+    line-height 64px
+    padding 0 32px
+    
+    +tablet()
+        text-align center
+        padding 0
+    
+    a 
+        text-decoration none
+        color $contentColor
+    
+    .headline 
+        display block
+        font-size 2.5rem
+        font-weight 400
+        vertical-align middle
+        transition all 200ms ease-in-out
+    
+    &.shrunk
+        height 48px
+        line-height 48px    
+        
+        .headline 
+            font-size 2rem
+    
+    +mobile()
+        box-shadow $boxShadow
+
+nav
+    text-align center
+    white-space nowrap
+    overflow hidden
+    position relative
+    z-index 2
+    box-sizing border-box
+    background-color $contentColor
+    transition all 200ms ease-in-out
+    position fixed
+    top 64px
+    left 0
+    right 0
+    height 42px
+    line-height 42px
+    display flex
+    justify-content center
+    align-items center
+    box-shadow $boxShadow
+
+    a
+        width auto
+        box-sizing border-box
+        margin 0 12px
+        padding 0 12px
+        font-weight 700
+        text-align center
+        font-size 0.85rem
+        color $fontColor
+        text-decoration none
+
+        
+        &.active
+            border-bottom 2px solid $primaryColor
+            color $primaryColor
+        
+        i.material-icons
+            vertical-align middle
+            padding-right 4px
+    
+    +mobile()
+        top auto
+        bottom 0
+        box-shadow none
+        border-top $border
+        justify-content space-around
+        
+        a
+            line-height 1.8
+            font-size 0.75rem
+            margin 0
+            padding 0 4px
+            
+            &.active
+                border-bottom none
+            
+            i.material-icons
+                display block
+                font-size 0.75rem
+                padding-right 0
+         
+main
+    margin-top 106px
+    padding 32px
+    
+    +tablet()
+        padding 16px
+    
+    +mobile()
+        margin-top 64px
+        padding 8px
+
+article
+    width 100%
+    max-width 1000px
+    margin 0 auto
+    padding 32px
+    background $contentColor
+    box-shadow $boxShadow
+    box-sizing border-box
+    
+    h1
+        font-size 2rem
+        border-bottom $border
+
+    h2
+        font-size 1.5rem
+        font-weight 300
+        margin 8px 0
+
+    a
+        color $fontColor
+        
+    section
+        margin-bottom 12px
+        padding 12px 0
+        border-bottom $border
+
+.list-item
+    padding 8px 16px
+    display flex
+    justify-content space-between
+    text-decoration none
+    box-sizing border-box
+    border-bottom $border
+    
+    +mobile()
+        display block
+    
+    &:hover
+        background rgba(0, 0, 0, 0.05)
+
+    strong
+        font-size 1.125rem
+        
+        +mobile()
+            display block
+
+.home-header
+    display flex
+    justify-content flex-start
+    align-items flex-end
+    
+    +mobile()
+        display block
+        text-align center
+    
+    .component-image
+        position relative
+        width 200px
+        height 200px
+        background-image url(/images/pirate.jpg)
+        background-position center center
+        background-repeat no-repeat
+        background-size cover
+        border-radius 50%
+        
+        +mobile()
+            margin 0 auto
+    
+    .home-core
+        margin-left 16px
+        margin-bottom 16px
+        padding 16px
+        flex-grow 1
+        border-bottom $border
+        
+        +mobile()
+            padding 12px
+        
+    .title
+        font-size 2rem
+            
+    .links
+        display flex
+        justify-content flex-start
+        
+        +mobile()
+            justify-content center
+        
+        .home-btn 
+            display block
+            padding 4px 0
+            box-sizing border-box
+            text-align center
+            text-decoration none
+            
+            &:first-of-type
+                margin-right 12px
+                border-right $border
+                padding-right 12px

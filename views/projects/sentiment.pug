@@ -1,0 +1,38 @@
+extends projectbase
+
+block project
+  p
+    | The Twitter Sentiment Analysis Platform was a tool I created when exploring
+    | Twitter data. The amount of data available makes Twitter an ideal playground
+    | for analytics practice.
+  p
+    | Since Twitter has such a vast user base, it provides a reasonably representative
+    | sample of opinions and mindsets. Collecting and analyzing tweets paints a
+    | decent picture of overall sentiment.
+    
+  p
+    | The platform has four main components: collector, processor, API and bot.
+  
+  p
+    | The collector utilizes Twitter's stream to collect firehose tweets filtered
+    | by keyword. I use the great #[a(href="http://www.tweepy.org/") Tweepy library]
+    | as the platform's foundation.
+  
+  p
+    | The processor conducts sentiment analysis on a batch of tweets and 
+    | them to the database. Sentiment is scored using
+    | #[a(href="http://comp.social.gatech.edu/papers/icwsm14.vader.hutto.pdf") Vader Sentiment Analysis]
+    | implemented in #[a(href="http://www.nltk.org/") NLTK].
+
+  p
+    | The sentiment API serves tweet polarity to the frontend. The API is built
+    | on #[a(href="http://flask.pocoo.org/") Flask] and connects to a
+    | #[a(href="https://www.sqlite.org/") SQLite3] database.
+
+  p
+    | The sentiment Bot publishes stats to Twitter on a cron. Tweepy is used to
+    | handle publishing.
+
+  p
+    | For more information, check out 
+    | #[a(href="https://github.com/dkrichards86/twitter-sentiment") Twitter Sentiment on GitHub]
