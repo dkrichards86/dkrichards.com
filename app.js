@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var stylus = require('stylus');
 var helmet = require('helmet');
-
+var compression = require('compression');
 
 var index = require('./routes/index');
 var personal = require('./routes/personal');
@@ -25,6 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(helmet());
+app.use(compression());
 
 app.use(stylus.middleware({
   src: __dirname + '/views',
