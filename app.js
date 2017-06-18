@@ -14,6 +14,7 @@ var resume = require('./routes/resume');
 var projects = require('./routes/projects');
 
 var app = express();
+var env = process.env.NODE_ENV || 'development';
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,15 +25,27 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(helmet());
-app.use(compression());
 
-app.use(stylus.middleware({
-  src: __dirname + '/views',
-  dest: __dirname + '/public'
-}));
+if (env == 'production') {
+  var cacheAge = 60000 * 60 * 24 * 30;
 
-app.use(express.static(path.join(__dirname, 'public')));
+  app.use(helmet());
+  app.use(compression());
+  app.use(stylus.middleware({
+    src: __dirname + '/views',
+    dest: __dirname + '/public',
+    compress: true,
+    sourcemap: true
+  }));
+  app.use(express.static(path.join(__dirname, 'public'), { maxAge: cacheAge }));
+}
+else {
+  app.use(stylus.middleware({
+    src: __dirname + '/views',
+    dest: __dirname + '/public'
+  }));
+  app.use(express.static(path.join(__dirname, 'public')));
+}
 
 app.use('/', index);
 app.use('/personal', personal);
