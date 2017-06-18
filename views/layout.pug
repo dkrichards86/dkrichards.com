@@ -1,3 +1,8 @@
+mixin link(href, name)
+  //- attributes == {title: "", target: "_self", class: ""}
+  a(href=href, title=attributes.title, target=attributes.target, class=attributes.class)= name
+
+
 doctype html
 html(lang='en')
   head
@@ -25,19 +30,19 @@ html(lang='en')
     meta(property="og:description", content=description)/
   body
     header
-      a(href="/", class="headline") Keith Richards
+      +link('/', 'Keith Richards')(title="dkrichards.com home page", class="headline")
     
     nav
-      a(href="/")
+      a(href="/", title="Home Page")
         i.material-icons home
         span Home
-      a(href="/resume")
+      a(href="/resume", title="My Resume")
         i.material-icons work
         span Resume
-      a(href="/projects")
+      a(href="/projects", title="My Projects")
         i.material-icons assignment_turned_in
         span Projects
-      a(href="/personal")
+      a(href="/personal", "About Me")
         i.material-icons person
         span About Me
 

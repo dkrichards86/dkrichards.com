@@ -15,19 +15,19 @@ block project
   
   p
     | The collector utilizes Twitter's stream to collect firehose tweets filtered
-    | by keyword. I use the great #[a(href="http://www.tweepy.org/") Tweepy library]
+    | by keyword. I use the great #[+link("http://www.tweepy.org/", 'Tweepy library')(title="Tweepy", target="_blank")]
     | as the platform's foundation.
   
   p
     | The processor conducts sentiment analysis on a batch of tweets and 
     | them to the database. Sentiment is scored using
-    | #[a(href="http://comp.social.gatech.edu/papers/icwsm14.vader.hutto.pdf") Vader Sentiment Analysis]
-    | implemented in #[a(href="http://www.nltk.org/") NLTK].
+    | #[+link("http://comp.social.gatech.edu/papers/icwsm14.vader.hutto.pdf", 'Vader Sentiment Analysis')(title="Vader Sentiment", target="_blank")]
+    | implemented in #[+link("http://www.nltk.org/", 'NLTK')(title="NLTK", target="_blank")].
 
   p
     | The sentiment API serves tweet polarity to the frontend. The API is built
-    | on #[a(href="http://flask.pocoo.org/") Flask] and connects to a
-    | #[a(href="https://www.sqlite.org/") SQLite3] database.
+    | on #[+link("http://flask.pocoo.org/", 'Flask')(title="Flask", target="_blank")] and connects to a
+    | #[+link("https://www.sqlite.org/", 'SQLite3')(title="SQLite", target="_blank")] database.
 
   p
     | The sentiment Bot publishes stats to Twitter on a cron. Tweepy is used to
@@ -35,4 +35,4 @@ block project
 
   p
     | For more information, check out 
-    | #[a(href="https://github.com/dkrichards86/twitter-sentiment") Twitter Sentiment on GitHub]
+    | #[+link('/projects/sentiment', 'Twitter Sentiment Platform')(title="Learn more about Twitter Sentiment Platform")]

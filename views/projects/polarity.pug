@@ -3,16 +3,16 @@ extends projectbase
 block project
   p
     | I built Presidential Polarity to demonstrate the capabilities of 
-    | #[a(href="/projects/sentiment") Twitter Sentiment Platform]. I collect all
+    | #[+link('/projects/sentiment', 'Twitter Sentiment Platform')(title="Learn more about Twitter Sentiment Platform")]
     | tweets containing the word #[strong Trump] and write them to disc. Every 15
     | minutes, I run the tweets through an analysis pipeline and determine their
     | sentiment. This data is served by an API, and tweets are posted daily and
-    | weekly. The visualization itself is written in #[a(href="https://d3js.org/") D3].
+    | weekly. The visualization itself is written in #[+link('https://d3js.org/', 'D3.js')(title="D3", target="_blank")].
   
   p
     | The sheer volume of data collected is absolutely mind-boggling. I see millions
     | of tweets every day.  It's crazy.
     
   p
-  | You can see the project live in action on #[a(href="http://polarity.dkrichards.com") polarity.dkrichards.com].
-  | You can view the source on #[a(href="https://github.com/dkrichards86/presidential-polarity") GitHub].
+    | You can see the project live in action on #[+link('http://polarity.dkrichards.com', 'polarity.dkrichards.com')(title="Presidential Polarity", target="_blank")]
+    | You can view the source on and #[+link('https://github.com/dkrichards86/presidential-polarity', 'GitHub')(title="See Presidential Polarity on NPM", target="_blank")].
