@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://www.dkrichards.com/</loc>
+</url>
+<url>
+  <loc>https://www.dkrichards.com/resume</loc>
+</url>
+<url>
+  <loc>https://www.dkrichards.com/articles</loc>
+</url>
+<url>
+  <loc>https://www.dkrichards.com/projects</loc>
+</url>
+<url>
+  <loc>https://www.dkrichards.com/personal</loc>
+</url>
+<url>
+  <loc>https://www.dkrichards.com/articles/nvm</loc>
+</url>
+<url>
+  <loc>https://www.dkrichards.com/articles/redux</loc>
+</url>
+<url>
+  <loc>https://www.dkrichards.com/articles/props-and-state</loc>
+</url>
+<url>
+  <loc>https://www.dkrichards.com/articles/lifecycle</loc>
+</url>
+<url>
+  <loc>https://www.dkrichards.com/projects/portfolio</loc>
+</url>
+<url>
+  <loc>https://www.dkrichards.com/projects/sentiment</loc>
+</url>
+<url>
+  <loc>https://www.dkrichards.com/projects/polarity</loc>
+</url>
+<url>
+  <loc>https://www.dkrichards.com/projects/metamanager</loc>
+</url>
+<url>
+  <loc>https://www.dkrichards.com/projects/react-metamanager</loc>
+</url>
+</urlset>
