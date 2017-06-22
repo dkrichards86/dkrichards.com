@@ -30,7 +30,7 @@ var projects = [
 
 router.get('/', function(req, res, next) {
   res.render('projects', {
-    title: "Keith Richards - Resume",
+    title: "Keith Richards - Projects",
     description: "Take a look at some of the projects by Keith Richards, a software developer from Durham, NC.",
     projects: projects
   });
