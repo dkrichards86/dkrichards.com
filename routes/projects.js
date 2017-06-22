@@ -30,7 +30,7 @@ var projects = [
 
 router.get('/', function(req, res, next) {
   res.render('projects', {
-    title: "Keith Richards - Resume",
+    title: "Keith Richards - Projects",
     description: "Take a look at some of the projects by Keith Richards, a software developer from Durham, NC.",
     projects: projects
   });
@@ -39,7 +39,7 @@ router.get('/', function(req, res, next) {
 projects.forEach( function(project) {
   router.get('/' + project.slug, function(req, res, next) {
     res.render('projects/' + project.slug, {
-      title: "Keith Richards - " + project.header,
+      title: project.header + " - Keith Richards",
       description: project.subheader,
       header: project.header,
       subheader: project.subheader
