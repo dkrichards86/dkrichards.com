@@ -1,0 +1,107 @@
+extends articlebase
+
+block project
+  p
+    | Simply put, Redux is a giant Javascript object containing all state 
+    | information associated with a particular application. This object is known
+    | as the #[span.code store].
+  
+  p
+    | It serves as a "single source of truth", allowing the developer to update
+    | data in a single location and have that update propagate everywhere.
+  
+  h3 Why does Redux exist?
+  
+  p
+    | When Facebook first launched React, they relied on a network of callbacks 
+    | and references to keep application state in sync. While this approach can
+    | work on small applications, it doesn't behave well in large apps. Facebook 
+    | has tens of thousands of components, making a callback network impossible 
+    | to maintain. Enter Flux. 
+  
+  p
+    | Flux is a predecessor to Redux. The underlying concept is the same- Flux 
+    | is a single source of truth, and it shares data as appropriate. Flux is 
+    | more rigid in implementation than Redux, however, making code much less 
+    | reusable. Redux aimed to improve upon the Flux concept by making code reusable.
+  
+  h3 So how does Redux work?
+  
+  p
+    | Redux has two main pieces. These are #[span.code actions] and #[span.code reducers].
+  
+  h4 Actions
+  
+  p
+    | Actions are, well, the action being done. This could be as simple as 
+    | incrementing a counter, or as complex as asynchronously communicating with
+    | an API via XHR. In either case, the role of the action is to 
+    | aggregate/prepare data for storage. Once an action has its data, it will 
+    | pass that data to a reducer.
+  
+  h4 Reducers
+  
+  p
+    | A reducer is an interface to the Redux store. It contains all tools 
+    | required to properly instantiate and update a store. Reducers receive data
+    | from an action, and will update the store accordingly. It is important for
+    | the reducer, and only the reducer, to be in control of the store. Treat the
+    | store as an immutable object.
+  
+  h3 Where does React come in?
+  
+  p
+    | Redux, while able to be used in any project, originated as a tool to 
+    | replace Flux in React applications. For this reason, the author 
+    | #[+link('(https://github.com/gaearon', 'Dan Abramov')(title="Gaeron on GitHub" target="_blank")]
+    | built a bridge for React and Redux. This bridge is aptly named #[span.code react-redux].
+    | #[span.code react-redux] has three main pieces. These are #[span.code &lt;Provider /&gt;], 
+    | #[span.code dispatch()], and #[span.code connect()].
+  
+  h4 &lt;Provider /&gt;
+  
+  p
+    | &lt;Provider /&gt; is a higher order component wrapping your React application. 
+    | This HoC is the main tool for sharing Redux data with React.
+  
+  h4 dispatch()
+
+  p
+    | #[span.code dispatch()] calls an action's function.
+    | #[span.code dispatch(incrementCounter())] would call an imaginary 
+    | #[span.code incrementCounter()] function, which would ostensibly increment
+    | a counter.
+  
+  p
+    | Similarly, #[span.code dispatch(setCounterValue(6))] would call an imaginary
+    | #[span.code setCounterValue()] function with an argument 6. This function 
+    | would probably set a counter value to 6.
+  
+  h4 connect()
+
+  p
+    | #[span.code connect()] is another higher order function used by
+    | #[span.code react-redux]. #[span.code connect] provides an interface for a
+    | component to communicate with the store made accessible by
+    | #[span.code &lt;Provider /&gt;]. #[span.code connect()] introduces the 
+    | #[span.code dispatch()] prop to a component. #[span.code connect()] also
+    | accepts some arguments, the most common two typically referred to as
+    | #[span.code mapStateToProps] and #[span.code mapDispatchToProps].
+  
+  h4 mapStateToProps
+  
+  p
+    | #[span.code mapStateToProps] is used to take store data exposed by 
+    | #[span.code &lt;Provider /&gt;] and shared by #[span.code connect()], and convert
+    | it into props used by the component itself.
+  
+  h4 mapDispatchToProps
+  
+  p
+    | #[span.code mapDispatchToProps] is used to map #[span.code dispatch()] 
+    | calls to properties. It is typically used when a dispatch requires 
+    | intervention before firing.
+  
+  p.footnote
+    | Note: I originally posted this as a Gist on GitHub, but I'm reposting here
+    | for added visibility.

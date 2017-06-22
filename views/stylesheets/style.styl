@@ -119,7 +119,7 @@ nav
             
             i.material-icons
                 display block
-                font-size 0.75rem
+                font-size 1.2rem
                 padding-right 0
          
 main
@@ -151,6 +151,17 @@ article
         font-size 1.5rem
         font-weight 300
         margin 8px 0
+        
+    h3
+        font-size 1.2rem
+        margin 8px 0
+        border-bottom $border
+    
+    h4
+        font-size 1rem
+        font-weight 700
+        margin 4px 0
+        text-decoration underline
 
     a
         color $fontColor
@@ -159,6 +170,29 @@ article
         margin-bottom 12px
         padding 12px 0
         border-bottom $border
+
+    .citation
+        border-top $border
+        padding-top 8px
+        margin-bottom 0
+        text-align right
+        
+        span
+            text-decoration underline
+    
+    .code
+        display inline-block
+        background $backgroundColor
+        padding 0 4px
+        font-size .825rem
+        font-family monospace
+        color red
+        box-sizing border-box
+        border $border
+    
+    .footnote
+        font-size .825rem
+        font-style italic
 
 .list-item
     padding 8px
@@ -214,6 +248,9 @@ article
         
     .title
         font-size 2rem
+
+        h1
+            border-bottom none
             
     .links
         display flex
@@ -233,3 +270,6 @@ article
                 margin-right 12px
                 border-right $border
                 padding-right 12px
+
+#home p
+    font-size 1.2rem
