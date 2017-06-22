@@ -1,0 +1,105 @@
+extends articlebase
+
+block project
+  p
+    | React has a built-in hook system useful for updating your component based on 
+    | changes in data, both local and inherited. This is known as the 
+    | [#strong Component Lifecycle].
+  
+  h3 constructor()
+  
+  p
+    | React's lifecycle starts with #[span.code constructor()]. Here, you 
+    | initialize state and bind class methods.
+  
+  h4 Why bind class methods?
+  
+  p
+    | Anonymous functions are created as needed, which can be a costly exercise. 
+    | If you find yourself using and reusing a class method, or are attaching a 
+    | class method to an event, for instance, binding #[span.code this] in the 
+    | constructor avoids the cost incurred by repeatedly creating anonymous functions.
+  
+  h3 componentWillMount()
+  
+  p
+    | #[span.code componentWillMount()] is the next stage in the component 
+    | lifecycle. React's reconciler calls #[span.code componentWillMount] just 
+    | before the initial render. This is the only lifecycle hook called during 
+    | server-side rendering.
+  
+  h3 render()
+  
+  p
+    | With the data in place, it's time to write to the DOM. Enter 
+    | #[span.code render]. #[span.code render]'s return value is run through 
+    | React's diffing algorithm and will update the DOM as cheaply as possible.
+    | React relies on element keys and ordering to efficiently #[span.code diff]
+    | its DOM. If a key exists, React will compare it. Otherwise React will base
+    | it's #[span.code diff] on element order.
+  
+  ul
+    li 
+      |If a root element is removed between #[span.code diffs], React will simply remove the element.
+    li 
+      | If a root element is added between #[span.code diffs], React will add the element.
+    li 
+      | If a root element remains of the same type, React will only
+      | update changed attributes. That is, if your root element goes from #[span.code &lt;div className='class-1' /&gt;]
+      | to #[span.code &lt;div className='class-2' /&gt;], React will simply update the element inline.
+    li 
+      | If a root element changes, the existing element will be destroyed and a new 
+      | element will be built from scratch and put in its place.
+  
+  h3 componentDidMount()
+  
+  p
+    | After the initial #[span.code render], React calls 
+    | #[span.code componentDidMount()], signaling that the DOM is fully mounted
+    | and ready for use.
+  
+  h3 shouldComponentUpdate(nextProps, nextState)
+  
+  p
+    | Since React listens to data updates in #[span.code props] and 
+    | #[span.code state], it knows when this data has updated and its DOM has 
+    | become stale. These updates will kick off the next stages in the lifecycle,
+    | ultimately rerendering the DOM. React gives the developer a shield to 
+    | prevent unnecessary rendering. #[span.code shouldComponentUpdate()] returns
+    | a boolean dictating whether or not React should bother rerendering your 
+    | component. This boolean is checked in the beginning of the DOM diffing process.
+    | If you decide your component does not need a rerender, either programatically or 
+    | via a blanket #[span.code return false;], React will skip its diff and move on.
+  
+  h3 componentWillReceiveProps(nextProps)
+  
+  p
+    | #[span.code componentWillReceiveProps(nextProps)] comes into play when, 
+    | well, your component will receive props. Its worth noting that these props
+    | are not compared in any way by React- it is up to the developer to handle 
+    | the comparison. #[span.code componentWillReceiveProps] is useful for 
+    | updating #[span.code state] derived from #[span.code props].
+  
+  h3 componentWillUpdate(nextProps, nextState)
+  
+  p
+    | #[span.code componentWillUpdate] performs the same functions as 
+    | #[span.code componentWillMount], except on subsequent #[span.code render]s.
+  
+  h3 componentDidUpdate(prevProps, prevState)
+  
+  p
+    | Much like #[span.code componentWillUpdate], #[span.code componentDidUpdate] 
+    | performs the same functions as #[span.code componentDidMount], just later 
+    | in the component's life.
+  
+  h3 componentWillUnmount()
+  
+  p
+    | When React decides a component is to be removed, #[span.code componentWillUnmount()]
+    | is called. This lifecycle hook is used to remove any DOM attributes or 
+    | event listeners not implemented by React itself.
+  
+  p.footnote
+    | Note: I originally posted this as a Gist on GitHub, but I'm reposting here
+    | for added visibility.

@@ -39,7 +39,7 @@ router.get('/', function(req, res, next) {
 projects.forEach( function(project) {
   router.get('/' + project.slug, function(req, res, next) {
     res.render('projects/' + project.slug, {
-      title: "Keith Richards - " + project.header,
+      title: project.header + " - Keith Richards",
       description: project.subheader,
       header: project.header,
       subheader: project.subheader
