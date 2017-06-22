@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  article
+    h1 Articles
+    each article in articles
+      -var postlink = 'articles/' + article.slug;
+      a(href=postlink, class="list-item")
+        strong= article.header
+        span= article.postdate

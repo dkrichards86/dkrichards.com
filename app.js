@@ -9,6 +9,7 @@ var helmet = require('helmet');
 var compression = require('compression');
 
 var index = require('./routes/index');
+var articles = require('./routes/articles');
 var personal = require('./routes/personal');
 var resume = require('./routes/resume');
 var projects = require('./routes/projects');
@@ -48,9 +49,10 @@ else {
 }
 
 app.use('/', index);
+app.use('/articles', articles);
 app.use('/personal', personal);
-app.use('/resume', resume);
 app.use('/projects', projects);
+app.use('/resume', resume);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
