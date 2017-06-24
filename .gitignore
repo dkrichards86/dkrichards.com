@@ -1,5 +1,6 @@
 node_modules/
-public/javascripts/*
+public/javascripts/analytics.js
+public/javascripts/schema.json
 public/stylesheets/*
 drafts/
 
