@@ -1,0 +1,17 @@
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "name": "Keith Richards",
+  "description": "Software developer in Durham, NC",
+  "email": "mailto:dkrichards86@gmail.com",
+  "image": "https://www.dkrichards.com/pirate.jpg",
+  "url": "https://www.dkrichards.com",
+  "worksFor": "RTI International",
+  "jobTitle": "Software Developer",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Durham",
+    "addressRegion": "NC",
+    "postalCode": "27713"
+  }
+}
