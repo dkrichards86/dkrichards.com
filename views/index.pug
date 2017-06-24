@@ -3,13 +3,15 @@ extends layout
 block content
   article#home.content
     div.home-header
-      div.component-image
+      div.home-image
       div.home-core
-        div.title
-          h1 Keith Richards
-        div.links
-          +link('/personal', 'About Me')(title="Learn more about me", class="home-btn")
-          +link('/resume', 'My Work')(title="Check out my work", class="home-btn")
-    div
-      p
-        | I am a Durham, NC based software developer, amateur powerlifter, former Marine, and consummate bro.
+        h1.title Keith Richards
+        p
+          | I am a Durham, NC based software developer, amateur powerlifter, former Marine, and consummate bro.
+    div.social-links
+      a(href="https://github.com/dkrichards86", target="_blank", title="Follow me out on GitHub")
+        img(src='http://dkrichards-dkrichards86.c9users.io/images/github.png', alt="dkrichards86 on GitHub")
+      a(href="https://twitter.com/dkrichards86", target="_blank", title="Follow me out on Twitter")
+        img(src='http://dkrichards-dkrichards86.c9users.io/images/twitter.png', alt="@dkrichards86 on Twitter")
+      a(href="https://www.linkedin.com/in/dkrichards/", target="_blank", title="Connect with me on LinkedIn")
+        img(src='http://dkrichards-dkrichards86.c9users.io/images/linkedin.png', alt="Connect with me on LinkedIn")
