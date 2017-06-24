@@ -6,5 +6,5 @@ block content
     each project in projects
       -var postlink = 'projects/' + project.slug;
       a(href=postlink, class="list-item")
-        strong= project.header
+        span.list-item-header= project.header
         span= project.subheader
