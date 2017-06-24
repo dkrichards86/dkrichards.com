@@ -14,7 +14,7 @@ var projects = [
   {
     "slug": "polarity",
     "header": "Presidential Polarity",
-    "subheader": "A near realtime visualzation of Twitter's sentiment toward Preident Trump."
+    "subheader": "Visualizing Twitter's sentiment toward Preident Trump."
   },
   {
     "slug": "metamanager",
