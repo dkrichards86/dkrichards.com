@@ -13,5 +13,10 @@
     "addressLocality": "Durham",
     "addressRegion": "NC",
     "postalCode": "27713"
-  }
+  },
+  "sameAs": [
+    "https://github.com/dkrichards86",
+    "https://twitter.com/dkrichards86",
+    "https://www.linkedin.com/in/dkrichards/"
+  ]
 }
