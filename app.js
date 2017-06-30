@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var stylus = require('stylus');
 var helmet = require('helmet');
+var minify = require('express-minify');
 var compression = require('compression');
 
 var index = require('./routes/index');
@@ -21,17 +22,13 @@ var env = process.env.NODE_ENV || 'development';
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-
 if (env == 'production') {
   var cacheAge = 60000 * 60 * 24 * 30;
 
   app.use(helmet());
   app.use(compression());
+  app.use(minify());
+
   app.use(stylus.middleware({
     src: __dirname + '/views',
     dest: __dirname + '/public',
@@ -47,6 +44,11 @@ else {
   }));
   app.use(express.static(path.join(__dirname, 'public')));
 }
+
+app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', index);
 app.use('/articles', articles);
