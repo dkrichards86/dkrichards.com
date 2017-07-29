@@ -3,6 +3,12 @@ var router = express.Router();
 
 var articles = [
   {
+    "slug": "ansible",
+    "header": "Ansible for Bros",
+    "subheader": "A guide to Ansible, complete with football analogies.",
+    "postdate": "2017-08-01"
+  },
+  {
     "slug": "nvm",
     "header": "Installing NVM",
     "subheader": "Because I always forget...",
