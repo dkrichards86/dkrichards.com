@@ -8,11 +8,11 @@ html(lang='en')
   head
     title= title
     link(href="https://fonts.googleapis.com/css?family=Roboto:300,400,700", rel="stylesheet")
-    link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="canonical", href="http://www.dkrichards.com")
     link(rel="icon",type="image/png", href="/favicon.png")
-    base(href="https://www.dkrichards.com/")
+    // base(href="https://www.dkrichards.com/")
+    base(href="http://dkrichards-dkrichards86.c9users.io:8080/")
     meta(charset="utf-8")/
     meta(http-equiv="X-UA-Compatible", content="IE=edge")/
     meta(name="viewport", content="width=device-width, initial-scale=1")/
@@ -40,7 +40,12 @@ html(lang='en')
           "addressLocality": "Durham",
           "addressRegion": "NC",
           "postalCode": "27713"
-        }
+        },
+        "sameAs": [
+          "https://github.com/dkrichards86",
+          "https://twitter.com/dkrichards86",
+          "https://www.linkedin.com/in/dkrichards/"
+        ]
       }
 
   body
@@ -49,19 +54,19 @@ html(lang='en')
     
     nav
       a(href="/", title="Home Page")
-        i.material-icons home
+        img(src='/images/ic_home_white_24px.svg', alt="Visit the homepage of Keith Richards.")
         span Home
-      a(href="/resume", title="My Resume")
-        i.material-icons work
+      a(href="/resume_keith_richards.pdf", title="View my resume (PDF)", target='_blank',)
+        img(src='/images/ic_work_white_24px.svg', alt="View a PDF version of Keith's resume.")
         span Resume
-      a(href="/articles", "Some articles I've written")
-        i.material-icons library_books
+      a(href="https://medium.com/@dkrichards86", title="Some articles I've written", target="_blank")
+        img(src='/images/ic_library_books_white_24px.svg', alt="Read some of Keith's work on Medium")
         span Articles
-      a(href="/projects", title="My Projects")
-        i.material-icons assignment_turned_in
+      a(href="https://github.com/dkrichards86", title="My Projects", target="_blank")
+        img(src='/images/ic_assignment_turned_in_white_24px.svg', alt="See some of Keith's projects on GitHub")
         span Projects
       a(href="/personal", title="About Me")
-        i.material-icons person
+        img(src='/images/ic_person_white_24px.svg', alt="Learn more about Keith Richards.")
         span About Me
 
     main

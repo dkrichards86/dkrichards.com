@@ -92,14 +92,13 @@ nav
         color $fontColor
         text-decoration none
 
+        span
+            padding-left 4px
         
-        &.active
-            border-bottom 2px solid $primaryColor
-            color $primaryColor
-        
-        i.material-icons
+        img
+            height 28px
+            width auto
             vertical-align middle
-            padding-right 4px
     
     +mobile()
         top auto
@@ -114,13 +113,16 @@ nav
             margin 0
             padding 0 4px
             
-            &.active
-                border-bottom none
-            
-            i.material-icons
+            img
                 display block
-                font-size 1.2rem
-                padding-right 0
+                height 18px
+                width auto
+                text-align center
+                margin 0 auto
+                vertical-align middle
+            
+            span
+                padding-left 0
          
 main
     margin-top 106px
@@ -147,82 +149,12 @@ article
         font-size 2rem
         border-bottom $border
 
-    h2
-        font-size 1.5rem
-        font-weight 300
-        margin 8px 0
-        
-    h3
-        font-size 1.2rem
-        margin 8px 0
-        border-bottom $border
-    
-    h4
-        font-size 1rem
-        font-weight 700
-        margin 4px 0
-        text-decoration underline
-
     a
         color $fontColor
-        
-    section
-        margin-bottom 12px
-        padding 12px 0
-        border-bottom $border
 
-    .citation
-        border-top $border
-        padding-top 8px
-        margin-bottom 0
-        text-align right
-        
-        span
-            text-decoration underline
-    .code
-        display inline-block
-        background $backgroundColor
-        padding 0 4px
-        font-size .825rem
-        font-family monospace
-        color red
-        box-sizing border-box
-        border $border
-    
-    .footnote
-        font-size .825rem
-        font-style italic
-        
-#resume .citation
-    border-top none
-
-.list-item
-    padding 8px
-    display flex
-    justify-content space-between
-    align-items center
-    text-decoration none
-    box-sizing border-box
-    border-bottom $border
-    
-    +mobile()
-        display block
-    
-    &:hover
-        background rgba(0, 0, 0, 0.05)
-
-    .list-item-header
+#home
+    p
         font-size 1.2rem
-        font-weight 300
-    
-        +mobile()
-            display block
-    
-    .list-item-subheader
-        text-align right
-    
-        +mobile()
-            text-align left
 
 .home-header
     display flex
@@ -280,6 +212,3 @@ article
             height 28px
             width auto
             margin 4px
-
-#home p
-    font-size 1.2rem

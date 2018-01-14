@@ -2,7 +2,6 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var stylus = require('stylus');
 var helmet = require('helmet');
@@ -10,10 +9,7 @@ var minify = require('express-minify');
 var compression = require('compression');
 
 var index = require('./routes/index');
-var articles = require('./routes/articles');
 var personal = require('./routes/personal');
-var resume = require('./routes/resume');
-var projects = require('./routes/projects');
 
 var app = express();
 var env = process.env.NODE_ENV || 'development';
@@ -51,10 +47,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', index);
-app.use('/articles', articles);
 app.use('/personal', personal);
-app.use('/projects', projects);
-app.use('/resume', resume);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
