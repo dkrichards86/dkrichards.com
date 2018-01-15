@@ -2,284 +2,211 @@
 @import "variables"
 
 html
-    font-size 16px
-    
-    +tablet()
-        font-size 15px
-        
-    +mobile()
-        font-size 14px
+  font-size 16px
+
+  +tablet()
+    font-size 15px
+
+  +mobile()
+    font-size 14px
+
 body
-    background $backgroundColor
-    color $fontColor
-    line-height 1.6
-    font-size 1rem
-    font-family 'Roboto', sans-serif
+  background $backgroundColor
+  color $fontColor
+  line-height 1.6
+  font-size 1rem
+  font-family 'Roboto', sans-serif
 
 p
-    margin 12px 0
-    
-strong
-    font-weight 700
+  margin 12px 0
 
 header 
-    width 100%
-    box-sizing border-box
-    z-index 10
-    background-color $primaryColor
-    text-align left
-    position fixed
-    top 0
-    left 0
-    right 0
-    height 64px
-    line-height 64px
-    padding 0 32px
-    
-    +tablet()
-        text-align center
-        padding 0
-    
-    a 
-        text-decoration none
-        color $contentColor
-    
+  width 100%
+  box-sizing border-box
+  z-index 10
+  background-color $primaryColor
+  text-align left
+  position fixed
+  top 0
+  left 0
+  right 0
+  height 64px
+  line-height 64px
+  padding 0 32px
+
+  +tablet()
+    text-align center
+    padding 0
+
+  a 
+    text-decoration none
+    color $contentColor
+
+  .headline 
+    display block
+    font-size 2.5rem
+    font-weight 400
+    vertical-align middle
+    transition all 200ms ease-in-out
+
+  &.shrunk
+    height 48px
+    line-height 48px
+
     .headline 
-        display block
-        font-size 2.5rem
-        font-weight 400
-        vertical-align middle
-        transition all 200ms ease-in-out
-    
-    &.shrunk
-        height 48px
-        line-height 48px    
-        
-        .headline 
-            font-size 2rem
-    
-    +mobile()
-        box-shadow $boxShadow
+      font-size 2rem
+
+  +mobile()
+      box-shadow $boxShadow
 
 nav
-    text-align center
-    white-space nowrap
-    overflow hidden
-    position relative
-    z-index 2
+  text-align center
+  white-space nowrap
+  overflow hidden
+  position relative
+  z-index 2
+  box-sizing border-box
+  background-color $contentColor
+  transition all 200ms ease-in-out
+  position fixed
+  top 64px
+  left 0
+  right 0
+  height 42px
+  line-height 42px
+  display flex
+  justify-content center
+  align-items center
+  box-shadow $boxShadow
+
+  a
+    width auto
     box-sizing border-box
-    background-color $contentColor
-    transition all 200ms ease-in-out
-    position fixed
-    top 64px
-    left 0
-    right 0
-    height 42px
-    line-height 42px
-    display flex
-    justify-content center
-    align-items center
-    box-shadow $boxShadow
+    margin 0 12px
+    padding 0 12px
+    font-weight 700
+    text-align center
+    font-size 0.85rem
+    color $fontColor
+    text-decoration none
 
-    a
-        width auto
-        box-sizing border-box
-        margin 0 12px
-        padding 0 12px
-        font-weight 700
-        text-align center
-        font-size 0.85rem
-        color $fontColor
-        text-decoration none
+    span
+      padding-left 4px
 
-        
-        &.active
-            border-bottom 2px solid $primaryColor
-            color $primaryColor
-        
-        i.material-icons
-            vertical-align middle
-            padding-right 4px
-    
-    +mobile()
-        top auto
-        bottom 0
-        box-shadow none
-        border-top $border
-        justify-content space-around
-        
-        a
-            line-height 1.8
-            font-size 0.75rem
-            margin 0
-            padding 0 4px
-            
-            &.active
-                border-bottom none
-            
-            i.material-icons
-                display block
-                font-size 1.2rem
-                padding-right 0
-         
+    img
+      height 28px
+      width auto
+      vertical-align middle
+
+  +mobile()
+      top auto
+      bottom 0
+      box-shadow none
+      border-top $border
+      justify-content space-around
+
+      a
+        line-height 1.8
+        font-size 0.75rem
+        margin 0
+        padding 0 4px
+
+        img
+          display block
+          height 18px
+          width auto
+          text-align center
+          margin 0 auto
+          vertical-align middle
+
+        span
+          padding-left 0
+
 main
-    margin-top 106px
-    padding 32px
-    
-    +tablet()
-        padding 24px
-    
-    +mobile()
-        margin-top 64px
-        margin-bottom 42px
-        padding 12px
+  margin-top 106px
+  padding 32px
+  
+  +tablet()
+    padding 24px
+  
+  +mobile()
+    margin-top 64px
+    margin-bottom 42px
+    padding 12px
 
 article
-    width 100%
-    max-width 1000px
-    margin 0 auto
-    padding 32px
-    background $contentColor
-    box-shadow $boxShadow
-    box-sizing border-box
-    
-    h1
-        font-size 2rem
-        border-bottom $border
-
-    h2
-        font-size 1.5rem
-        font-weight 300
-        margin 8px 0
-        
-    h3
-        font-size 1.2rem
-        margin 8px 0
-        border-bottom $border
-    
-    h4
-        font-size 1rem
-        font-weight 700
-        margin 4px 0
-        text-decoration underline
-
-    a
-        color $fontColor
-        
-    section
-        margin-bottom 12px
-        padding 12px 0
-        border-bottom $border
-
-    .citation
-        border-top $border
-        padding-top 8px
-        margin-bottom 0
-        text-align right
-        
-        span
-            text-decoration underline
-    .code
-        display inline-block
-        background $backgroundColor
-        padding 0 4px
-        font-size .825rem
-        font-family monospace
-        color red
-        box-sizing border-box
-        border $border
-    
-    .footnote
-        font-size .825rem
-        font-style italic
-        
-#resume .citation
-    border-top none
-
-.list-item
-    padding 8px
-    display flex
-    justify-content space-between
-    align-items center
-    text-decoration none
-    box-sizing border-box
+  width 100%
+  max-width 1000px
+  margin 0 auto
+  padding 32px
+  background $contentColor
+  box-shadow $boxShadow
+  box-sizing border-box
+  
+  h1
+    font-size 2rem
     border-bottom $border
-    
-    +mobile()
-        display block
-    
-    &:hover
-        background rgba(0, 0, 0, 0.05)
 
-    .list-item-header
-        font-size 1.2rem
-        font-weight 300
-    
-        +mobile()
-            display block
-    
-    .list-item-subheader
-        text-align right
-    
-        +mobile()
-            text-align left
+  a
+    color $fontColor
+
+#home
+  p
+    font-size 1.2rem
 
 .home-header
-    display flex
-    justify-content flex-start
-    align-items flex-end
-    
+  display flex
+  justify-content flex-start
+  align-items flex-end
+
+  +mobile()
+    display block
+    text-align center
+
+  .home-image
+    position relative
+    width 200px
+    height 200px
+    background-image url(/images/pirate_min.jpg)
+    background-position center center
+    background-repeat no-repeat
+    background-size cover
+    border-radius 50%
+    flex-shrink 0
+    border $border
+
     +mobile()
-        display block
-        text-align center
-    
-    .home-image
-        position relative
-        width 200px
-        height 200px
-        background-image url(/images/pirate_min.jpg)
-        background-position center center
-        background-repeat no-repeat
-        background-size cover
-        border-radius 50%
-        flex-shrink 0
-        border $border
-        
-        +mobile()
-            margin 0 auto
-    
-    .home-core
-        margin-left 16px
-        margin-bottom 16px
-        padding 16px
-        flex-grow 1
-        border-bottom $border
-        
-        +mobile()
-            padding 12px
-        
-    h1.title
-        font-size 2.5rem
-        border-bottom none
-        line-height 1
+      margin 0 auto
+
+  .home-core
+    margin-left 16px
+    margin-bottom 16px
+    padding 16px
+    flex-grow 1
+    border-bottom $border
+
+    +mobile()
+      padding 12px
+
+  h1.title
+    font-size 2.5rem
+    border-bottom none
+    line-height 1
 
 .social-links
-    display flex
-    justify-content flex-end
-    align-items center
-    margin-top 8px
-    
-    +mobile()
-        display block
-        text-align center
-    
-    a
-        cursor pointer
-    
-        img
-            height 28px
-            width auto
-            margin 4px
+  display flex
+  justify-content flex-end
+  align-items center
+  margin-top 8px
 
-#home p
-    font-size 1.2rem
+  +mobile()
+    display block
+    text-align center
+
+  a
+    cursor pointer
+
+    img
+      height 28px
+      width auto
+      margin 4px
